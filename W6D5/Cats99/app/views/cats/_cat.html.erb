@@ -1,0 +1,16 @@
+
+<% if action == :show %>
+    <li><a href="<%=cats_url%>">All the cats!</a></li>
+<% else %>
+    <li><a href="<%= edit_cat_url(cat) %>">Edit cat</a></li>
+    <li><a href="<%= cat_url(cat) %>">Cat show page</a></li>
+
+<% end %>
+<ul>
+    <li><%= cat.name %></li>
+    <li><%= cat.age%></li>
+    <li><%= cat.sex %></li>
+    <li><%= cat.color %></li>
+    <br>
+    <li><%= cat.description %></li>
+</ul> 
