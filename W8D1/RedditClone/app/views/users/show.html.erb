@@ -1,0 +1,56 @@
+
+<p>
+    <form action="<%= edit_user_url %>" method="GET">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="submit" value="Edit">
+    </form>
+</p>
+<h1><%= @user.username %>'s page</h1>
+    <label for="sub_form">Create a new Sub:</label>
+    <form action="<%= user_subs_url(@user) %>" method="POST" id="sub_form">
+        <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %>>
+        <label>Title
+        <br>
+            <input type="text" name="sub[title]" value="">
+        </label>
+        <br>
+        <label>Description
+        <br>
+            <textarea name="sub[description]"></textarea>
+        </label>
+        <br>
+        <input type="submit" value="Create Sub">
+    </form>
+<h2>Subs:</h2>
+<ul>
+    <% @user.subs.each do |sub| %>
+    <li><a href="<%= sub_url(sub.id) %>"><%= sub.title %></a> 
+    <%= sub.description %> 
+    </li>
+
+    <% end %>
+</ul>
+
+<form action="<%= posts_url %>" method="POST">
+        <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %>>
+        <h3>Create a Post:</h3> 
+        <label>Title
+        <br>
+            <input type="text" name="post[title]" value="">
+        </label>
+        <br>
+        <label>Description
+        <br>
+            <textarea name="post[context]"></textarea>
+        </label>
+        <br>
+            <ul><% Sub.all.each do |sub| %>
+                <li>
+                    <label for="radio-<%= sub.id %>"><%= sub.title %></label>
+                    <input type="radio" name="post[sub_id]" value=<%= sub.id %> id="radio-<%= sub.id %>">
+                </li> 
+                <% end %>              
+            </ul>
+        <input type="submit" value="Create Post">
+ </form>
+
