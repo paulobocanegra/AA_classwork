@@ -1,0 +1,58 @@
+/* PHASE 6: Sidebar */
+.profile-picture {
+    display: block;
+    margin-top: -80px;
+    position: relative;
+}
+
+.profile-picture > img {
+    border: 1px solid;
+    border-radius: 5%;
+    border-color: black;
+}
+
+.profile-info{
+    padding: 15px;
+}
+
+.profile-nav {
+    height: 100%;
+}
+
+.profile-nav a {
+    display: block;
+    padding: 5px;
+    box-sizing: inherit;
+    border-bottom: 1px solid black;
+}
+
+.profile-nav > li {
+    font-weight: 900;
+}
+
+.profile-nav li:first-child {
+    border-top: 1px solid black;
+}
+
+.profile-nav a:hover{
+    background-color: rgb(195, 207, 230);
+}
+
+.online {
+    position: absolute;
+    transform: rotate(0.9turn);
+    background-color: rgb(50, 179, 11);
+    border-radius: 35%;
+    margin: -5px;
+    padding: 2px;
+    letter-spacing: .1rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+    font-weight: 700;
+}
+
+.friends-grid a {
+    display: flexbox;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
