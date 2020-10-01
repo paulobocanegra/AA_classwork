@@ -1,0 +1,20 @@
+#game {
+    background-color: pink;
+}
+
+#game:last-child {
+    border: black 1px solid;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    background-color: antiquewhite;
+    align-content: center;
+}
+
+div.tile {
+    background-color: burlywood;
+    border: grey 1px solid;
+    padding: 15px 15px;
+}
